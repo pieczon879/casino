@@ -4,14 +4,14 @@
       <h1 class="gameProviderItemDetails__title">{{ item.title }}</h1>
       <img
         class="gameProviderItemDetails__img"
-        :src="require(`@/assets/${item.img}`)"
+        :src="require(`@/assets/img/${item.img}`)"
         alt="Game"
       />
       <div class="gameProviderItemDetails__iframe">
         <h2>{{ item.iframeProvider }}</h2>
         <img
           class="gameProviderItemDetails__playIcon"
-          src="@/assets/play_icon.png"
+          src="@/assets/img/play_icon.png"
           alt="Play icon"
         />
       </div>

@@ -1,9 +1,11 @@
 <template>
   <div class="providersGameList">
-    <h5 class="providersGameList__title">
+    <h5 class="providersGameList__title" v-if="currentCategory.categoryName">
       {{ currentCategory.categoryName }}
     </h5>
+    <p class="errorFetchData" v-if="errorFetchData">{{ errorFetchData }}</p>
     <swiper
+      v-else
       class="providersGameList__slider"
       :speed="1000"
       :slides-per-view="6"
@@ -39,7 +41,7 @@
       >
         <ProviderGameListItem
           :id="item.id"
-          :imgSrc="require(`@/assets/${item.img}`)"
+          :imgSrc="require(`@/assets/img/${item.img}`)"
           :title="item.title"
         />
       </swiper-slide>
@@ -67,6 +69,7 @@ export default {
     return {
       currentCategory: {},
       gameListProviders: [],
+      errorFetchData: null,
     };
   },
   props: {
@@ -82,21 +85,39 @@ export default {
   methods: {
     getCurrentCategory() {
       fetch(`http://localhost:3004/game-categories/${this.categoryId}`)
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Something went wrong");
+          }
+        })
         .then((data) => {
           this.currentCategory = data;
         })
-        .catch((error) => console.error("There was an error!", error));
+        .catch((error) => {
+          console.error("There was an error!", error);
+          this.errorFetchData = "Something went wrong...";
+        });
     },
     getGamesProvidersByCategory() {
       fetch(
         `http://localhost:3004/game-providers/?categoryGameId=${this.categoryId}`
       )
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Something went wrong");
+          }
+        })
         .then((data) => {
           this.gameListProviders = data;
         })
-        .catch((error) => console.error("There was an error!", error));
+        .catch((error) => {
+          console.error("There was an error!", error);
+          this.errorFetchData = "Something went wrong...";
+        });
     },
   },
 };

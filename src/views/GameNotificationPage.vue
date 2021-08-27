@@ -2,7 +2,7 @@
   <main
     class="pageGameNotyfication"
     :style="{
-      backgroundImage: `url(${require('@/assets/casino_background.jpg')})`,
+      backgroundImage: `url(${require('@/assets/img/casino_background.jpg')})`,
     }"
   >
     <GoPrevPageBtn />

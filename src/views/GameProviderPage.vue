@@ -2,7 +2,7 @@
   <main
     class="page pageGameProvider"
     :style="{
-      backgroundImage: `url(${require('@/assets/casino_background2.jpg')})`,
+      backgroundImage: `url(${require('@/assets/img/casino_background2.jpg')})`,
     }"
   >
     <GoPrevPageBtn />

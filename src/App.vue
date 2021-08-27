@@ -13,8 +13,6 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/reset.scss";
-@import "@/assets/scss/global.scss";
-@import "@/assets/scss/mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 body {

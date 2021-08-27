@@ -13,7 +13,7 @@
       <h5 class="slideShow__title">Bonus 300$</h5>
       <img
         class="slideShow__img"
-        src="@/assets/casino_slide1.jpg"
+        src="@/assets/img/casino_slide1.jpg"
         alt="Casino bonus 1"
       />
     </swiper-slide>
@@ -21,7 +21,7 @@
       <h5 class="slideShow__title">Bonus 200$</h5>
       <img
         class="slideShow__img"
-        src="@/assets/casino_slide2.jpg"
+        src="@/assets/img/casino_slide2.jpg"
         alt="Casino bonus 2"
       />
     </swiper-slide>
@@ -29,7 +29,7 @@
       <h5 class="slideShow__title">Bonus 100$</h5>
       <img
         class="slideShow__img"
-        src="@/assets/casino_slide3.jpg"
+        src="@/assets/img/casino_slide3.jpg"
         alt="Casino bonus 3"
       />
     </swiper-slide>

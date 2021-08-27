@@ -2,7 +2,7 @@
   <div class="gameNotificationItem">
     <div class="gameNotificationItem__iconWrap">
       <img
-        src="@/assets/game_notification_icon.jpg"
+        src="@/assets/img/game_notification_icon.jpg"
         alt="Game notification icon"
       />
     </div>

@@ -2,8 +2,8 @@
   <div class="pageGameFilters">
     <GoPrevPageBtn />
 
-    <header class="pageGameFilters__header" v-if="categoryName">
-      <h1>Category: {{ categoryName }}</h1>
+    <header class="pageGameFilters__header" v-if="currentCategory.categoryName">
+      <h1>Category: {{ currentCategory.categoryName }}</h1>
     </header>
 
     <p class="errorFetchData" v-if="errorFetchData">{{ errorFetchData }}</p>
@@ -13,7 +13,7 @@
         v-for="item in gameListProviders"
         :key="item.id"
         :id="item.id"
-        :imgSrc="require(`@/assets/${item.img}`)"
+        :imgSrc="require(`@/assets/img/${item.img}`)"
         :title="item.title"
       />
     </div>
@@ -31,10 +31,6 @@ export default {
       type: String,
       require: true,
     },
-    categoryName: {
-      type: String,
-      require: false,
-    },
   },
   components: {
     ProviderGameListItem,
@@ -44,10 +40,12 @@ export default {
     return {
       gameListProviders: [],
       errorFetchData: null,
+      currentCategory: {},
     };
   },
   mounted() {
     this.getGamesProvidersByCategory();
+    this.getCurrentCategory();
   },
   methods: {
     getGamesProvidersByCategory() {
@@ -68,6 +66,14 @@ export default {
           console.error("There was an error!", error);
           this.errorFetchData = "Something went wrong...";
         });
+    },
+    getCurrentCategory() {
+      fetch(`http://localhost:3004/game-categories/${this.categoryId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          this.currentCategory = data;
+        })
+        .catch((error) => console.error("There was an error!", error));
     },
   },
 };
