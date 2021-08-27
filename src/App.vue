@@ -54,4 +54,10 @@ body {
 .swiper-pagination-bullet {
   background: #000 !important;
 }
+
+.errorFetchData {
+  color: red;
+  text-align: center;
+  padding: 20px 10px;
+}
 </style>

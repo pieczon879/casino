@@ -2,22 +2,34 @@
   <div class="gameFiltersNav">
     <router-link
       class="gameFiltersNav__link"
-      :to="{ name: 'GameFiltersPage', params: { categoryId: 1 } }"
+      :to="{
+        name: 'GameFiltersPage',
+        params: { categoryId: 1, categoryName: 'New games' },
+      }"
       >New games</router-link
     >
     <router-link
       class="gameFiltersNav__link"
-      :to="{ name: 'GameFiltersPage', params: { categoryId: 2 } }"
+      :to="{
+        name: 'GameFiltersPage',
+        params: { categoryId: 2, categoryName: 'Top games' },
+      }"
       >Top games</router-link
     >
     <router-link
       class="gameFiltersNav__link"
-      :to="{ name: 'GameFiltersPage', params: { categoryId: 3 } }"
+      :to="{
+        name: 'GameFiltersPage',
+        params: { categoryId: 3, categoryName: 'Slots' },
+      }"
       >Slots</router-link
     >
     <router-link
       class="gameFiltersNav__link"
-      :to="{ name: 'GameFiltersPage', params: { categoryId: 4 } }"
+      :to="{
+        name: 'GameFiltersPage',
+        params: { categoryId: 4, categoryName: 'Jackpot' },
+      }"
       >Jackpot</router-link
     >
   </div>
