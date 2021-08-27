@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import GameNotificationPage from "../views/GameNotificationPage.vue";
 import GameProviderPage from "../views/GameProviderPage.vue";
 import GameFiltersPage from "../views/GameFiltersPage.vue";
+import NotFoundPage from "../views/NotFoundPage.vue";
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     name: 'GameFiltersPage',
     component: GameFiltersPage,
     props: true,
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFoundPage',
+    component: NotFoundPage,
   }
 ];
 
