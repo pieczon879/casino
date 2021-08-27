@@ -69,11 +69,20 @@ export default {
     },
     getCurrentCategory() {
       fetch(`http://localhost:3004/game-categories/${this.categoryId}`)
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Something went wrong");
+          }
+        })
         .then((data) => {
           this.currentCategory = data;
         })
-        .catch((error) => console.error("There was an error!", error));
+        .catch((error) => {
+          console.error("There was an error!", error);
+          this.errorFetchData = "This category does not exist.";
+        });
     },
   },
 };

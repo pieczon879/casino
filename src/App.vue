@@ -53,7 +53,8 @@ body {
   background: #000 !important;
 }
 
-.errorFetchData {
+.errorFetchData,
+.error {
   color: red;
   text-align: center;
   padding: 20px 10px;
