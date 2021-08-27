@@ -86,6 +86,10 @@ export default {
     color: #fff;
     padding: 30px 0;
   }
+
+  @media (max-width: 576px) {
+    padding-top: 70px;
+  }
 }
 
 .flexContainer {

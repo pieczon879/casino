@@ -4,7 +4,7 @@
       class="gameFiltersNav__link"
       :to="{
         name: 'GameFiltersPage',
-        params: { categoryId: 1, categoryName: 'New games' },
+        params: { categoryId: 1 },
       }"
       >New games</router-link
     >
@@ -12,7 +12,7 @@
       class="gameFiltersNav__link"
       :to="{
         name: 'GameFiltersPage',
-        params: { categoryId: 2, categoryName: 'Top games' },
+        params: { categoryId: 2 },
       }"
       >Top games</router-link
     >
@@ -20,7 +20,7 @@
       class="gameFiltersNav__link"
       :to="{
         name: 'GameFiltersPage',
-        params: { categoryId: 3, categoryName: 'Slots' },
+        params: { categoryId: 3 },
       }"
       >Slots</router-link
     >
@@ -28,7 +28,7 @@
       class="gameFiltersNav__link"
       :to="{
         name: 'GameFiltersPage',
-        params: { categoryId: 4, categoryName: 'Jackpot' },
+        params: { categoryId: 4 },
       }"
       >Jackpot</router-link
     >

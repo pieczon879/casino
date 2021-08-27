@@ -54,6 +54,10 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   padding: 15px;
+
+  @media (max-width: 576px) {
+    padding-top: 70px;
+  }
 }
 
 .backToHomeBtn {
