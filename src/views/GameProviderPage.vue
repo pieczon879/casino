@@ -5,7 +5,8 @@
       backgroundImage: `url(${require('@/assets/casino_background2.jpg')})`,
     }"
   >
-    <router-link class="backToHomeBtn" to="/"> &larr; Home</router-link> |
+    <GoPrevPageBtn />
+
     <div v-if="error" class="error">{{ error }}</div>
     <Suspense v-else>
       <template #default>
@@ -20,6 +21,7 @@
 
 <script>
 import GameNotificationItemDetails from "@/components/GameProviderItemDetails.vue";
+import GoPrevPageBtn from "@/components/GoPrevPageBtn.vue";
 import BaseLoader from "@/components/BaseLoader.vue";
 import { ref, onErrorCaptured } from "vue";
 
@@ -28,6 +30,7 @@ export default {
   components: {
     GameNotificationItemDetails,
     BaseLoader,
+    GoPrevPageBtn,
   },
   props: {
     id: {
@@ -50,7 +53,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 15px;
+  padding: 50px 15px;
 }
 
 .backToHomeBtn {

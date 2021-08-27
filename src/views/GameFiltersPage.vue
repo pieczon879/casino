@@ -1,5 +1,7 @@
 <template>
   <div class="pageGameFilters">
+    <GoPrevPageBtn />
+
     <header class="pageGameFilters__header" v-if="categoryName">
       <h1>Category: {{ categoryName }}</h1>
     </header>
@@ -20,6 +22,7 @@
 
 <script>
 import ProviderGameListItem from "@/components/ProviderGameListItem.vue";
+import GoPrevPageBtn from "@/components/GoPrevPageBtn.vue";
 
 export default {
   name: "GameFiltersPage",
@@ -35,6 +38,7 @@ export default {
   },
   components: {
     ProviderGameListItem,
+    GoPrevPageBtn,
   },
   data() {
     return {
