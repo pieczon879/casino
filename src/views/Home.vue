@@ -1,18 +1,48 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="homePage">
+    <header class="headerHomePage">
+      <SlideShow />
+      <GameNotificationsList />
+    </header>
+    <nav>
+      <GameFiltersNav />
+    </nav>
+    <main>
+      <ProvidersGameListSlider :categoryId="1" />
+      <ProvidersGameListSlider :categoryId="2" />
+      <ProvidersGameListSlider :categoryId="3" />
+      <ProvidersGameListSlider :categoryId="4" />
+    </main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import SlideShow from "@/components/SlideShow.vue";
+import GameNotificationsList from "@/components/GameNotificationsList.vue";
+import ProvidersGameListSlider from "@/components/ProvidersGameListSlider.vue";
+import GameFiltersNav from "@/components/GameFiltersNav.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    SlideShow,
+    GameNotificationsList,
+    ProvidersGameListSlider,
+    GameFiltersNav,
   },
 };
 </script>
+
+
+<style lang="scss">
+.headerHomePage {
+  display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+main {
+  padding: 15px 0;
+}
+</style>
